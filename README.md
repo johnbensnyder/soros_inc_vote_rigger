@@ -1,2 +1,2 @@
-# soros_inc_vote_rigger
+# Soros Inc. Vote Rigging
 Oh shit, she's onto us
