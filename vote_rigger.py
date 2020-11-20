@@ -88,13 +88,18 @@ class SorosIncVoteRigger(object):
         if not isinstance(running, bool):
             raise TypeError("Running must be boolean")
         self.__running=running
-    
-rig_some_votes = SorosIncVoteRigger()
-rig_some_votes.queue_votes()
-print("Trump before adjustment: {0}".format(rig_some_votes.real_trump_total))
-print("Biden before adjustment: {0}".format(rig_some_votes.real_biden_total))
 
-# give the thread time to catch up
-sleep(10)
-print("Trump after adjustment: {0}".format(rig_some_votes.soros_approved_trump_total))
-print("Biden after adjustment: {0}".format(rig_some_votes.soros_approved_biden_total))
+def main():
+    rig_some_votes = SorosIncVoteRigger()
+    rig_some_votes.queue_votes()
+    print("Trump before adjustment: {0}".format(rig_some_votes.real_trump_total))
+    print("Biden before adjustment: {0}".format(rig_some_votes.real_biden_total))
+
+    # give the thread time to catch up
+    sleep(10)
+    print("Trump after adjustment: {0}".format(rig_some_votes.soros_approved_trump_total))
+    print("Biden after adjustment: {0}".format(rig_some_votes.soros_approved_biden_total))
+
+if __name__=='__main__':
+    main()
+ 
